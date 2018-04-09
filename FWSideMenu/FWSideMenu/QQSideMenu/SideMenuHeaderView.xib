@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,6 +19,10 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerBg" translatesAutoresizingMaskIntoConstraints="NO" id="8xL-Kc-iD4">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pB-Rl-jbm">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="tSP-CI-Coa">
                     <rect key="frame" x="20" y="127" width="40" height="40"/>
                     <constraints>
@@ -47,26 +51,26 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="choiceyou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pN-pj-ytm">
-                    <rect key="frame" x="66" y="132" width="111.5" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <rect key="frame" x="66" y="129.5" width="133" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start" translatesAutoresizingMaskIntoConstraints="NO" id="HBL-IN-EGS">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hdr" translatesAutoresizingMaskIntoConstraints="NO" id="HBL-IN-EGS">
                     <rect key="frame" x="20" y="171" width="18" height="18"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="HBL-IN-EGS" secondAttribute="height" multiplier="1:1" id="5tQ-Y8-viA"/>
                         <constraint firstAttribute="width" constant="18" id="sN0-4h-NXO"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start" translatesAutoresizingMaskIntoConstraints="NO" id="Nwq-AE-cfm">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hds" translatesAutoresizingMaskIntoConstraints="NO" id="Nwq-AE-cfm">
                     <rect key="frame" x="38" y="171" width="18" height="18"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="18" id="JoA-ws-je3"/>
                         <constraint firstAttribute="width" secondItem="Nwq-AE-cfm" secondAttribute="height" multiplier="1:1" id="XJa-JA-5l9"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-yb-ZMZ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hdt" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-yb-ZMZ">
                     <rect key="frame" x="56" y="171" width="18" height="18"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="18" id="52V-5k-NnI"/>
@@ -89,9 +93,13 @@
                 <constraint firstAttribute="trailing" secondItem="yZk-JD-fkb" secondAttribute="trailing" constant="20" id="ZWl-n6-NgC"/>
                 <constraint firstItem="h03-DF-CXq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="cno-fg-A3r"/>
                 <constraint firstItem="KBk-q6-OHj" firstAttribute="leading" secondItem="h03-DF-CXq" secondAttribute="trailing" constant="2" id="d0u-oP-NPj"/>
+                <constraint firstItem="4pB-Rl-jbm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fUZ-30-aF6"/>
                 <constraint firstItem="0pN-pj-ytm" firstAttribute="leading" secondItem="tSP-CI-Coa" secondAttribute="trailing" constant="6" id="jf0-WF-luh"/>
+                <constraint firstAttribute="trailing" secondItem="4pB-Rl-jbm" secondAttribute="trailing" id="pUw-Kf-ash"/>
                 <constraint firstItem="0pN-pj-ytm" firstAttribute="centerY" secondItem="tSP-CI-Coa" secondAttribute="centerY" id="qB8-Qm-SX2"/>
                 <constraint firstAttribute="bottom" secondItem="h03-DF-CXq" secondAttribute="bottom" constant="15" id="qxO-1x-kFg"/>
+                <constraint firstAttribute="bottom" secondItem="4pB-Rl-jbm" secondAttribute="bottom" id="rKB-hS-fR2"/>
+                <constraint firstItem="4pB-Rl-jbm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="u51-24-2yw"/>
                 <constraint firstItem="8xL-Kc-iD4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vGc-EO-x6i"/>
                 <constraint firstItem="h03-DF-CXq" firstAttribute="top" secondItem="HBL-IN-EGS" secondAttribute="bottom" constant="4" id="vSh-8M-6Ia"/>
                 <constraint firstItem="HBL-IN-EGS" firstAttribute="top" secondItem="tSP-CI-Coa" secondAttribute="bottom" constant="4" id="wEb-Bh-tTB"/>
@@ -99,16 +107,21 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="grayView" destination="4pB-Rl-jbm" id="VPT-Vp-ieX"/>
                 <outlet property="headerImgView" destination="tSP-CI-Coa" id="JhQ-2N-WVE"/>
+                <outlet property="signLabel" destination="h03-DF-CXq" id="0cq-9w-XLu"/>
+                <outlet property="userNameLabel" destination="0pN-pj-ytm" id="F8G-Us-pJF"/>
             </connections>
             <point key="canvasLocation" x="-145.5" y="-183"/>
         </view>
     </objects>
     <resources>
         <image name="conversation_unsend_icon" width="32" height="32"/>
-        <image name="header" width="100" height="100"/>
+        <image name="hdr" width="32" height="32"/>
+        <image name="hds" width="32" height="32"/>
+        <image name="hdt" width="32" height="32"/>
+        <image name="header" width="40" height="40"/>
         <image name="headerBg" width="600" height="400"/>
         <image name="raz2" width="102" height="102"/>
-        <image name="start" width="18" height="18"/>
     </resources>
 </document>

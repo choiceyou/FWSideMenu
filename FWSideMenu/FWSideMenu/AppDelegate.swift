@@ -8,6 +8,9 @@
 
 import UIKit
 
+let kMenuWidth = UIScreen.main.bounds.width * 0.82
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,7 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        self.window?.rootViewController = FWSideMenuContainerViewController.container(centerViewController: UINavigationController(rootViewController: HomeViewController()), leftMenuViewController: SideMenuViewController(), rightMenuViewController: SideMenuViewController())
+        let menuContrainer = FWSideMenuContainerViewController.container(centerViewController: UINavigationController(rootViewController: HomeViewController()), leftMenuViewController: SideMenuViewController(), rightMenuViewController: SideMenuViewController())
+        menuContrainer.leftMenuWidth = kMenuWidth
+        menuContrainer.rightMenuWidth = kMenuWidth
+        
+        self.window?.rootViewController = menuContrainer
         self.window?.makeKeyAndVisible()
         
         return true

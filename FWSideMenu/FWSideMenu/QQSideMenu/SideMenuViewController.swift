@@ -11,7 +11,8 @@ import UIKit
 
 fileprivate let bgImageViewHeight: CGFloat = UIScreen.main.bounds.height * 0.32
 fileprivate let bottomViewHeight: CGFloat = 88
-fileprivate let leftSideMenuWidth: CGFloat = UIScreen.main.bounds.width * 0.8
+
+fileprivate let kBackgroundColor = UIColor(white: 0.98, alpha: 0.98)
 
 class SideMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -21,15 +22,16 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
     
     lazy var tableView: UITableView = {
         
-        let tableview = UITableView(frame: CGRect(x: 0, y: bgImageViewHeight, width: leftSideMenuWidth, height: UIScreen.main.bounds.height - bgImageViewHeight - bottomViewHeight))
+        let tableview = UITableView(frame: CGRect(x: 0, y: bgImageViewHeight, width: kMenuWidth, height: UIScreen.main.bounds.height - bgImageViewHeight - bottomViewHeight))
         tableview.separatorStyle = .none
+        tableview.backgroundColor = kBackgroundColor
         return tableview
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = kBackgroundColor
         
         self.view.addSubview(self.tableView)
         //        self.tableView.estimatedRowHeight = 44.0
@@ -38,11 +40,12 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.dataSource = self
         
         let headerView = SideMenuHeaderView.createView()
-        headerView.frame = CGRect(x: 0, y: 0, width: leftSideMenuWidth, height: bgImageViewHeight)
+        headerView.frame = CGRect(x: 0, y: 0, width: kMenuWidth, height: bgImageViewHeight)
         self.view.addSubview(headerView)
         
         let bottomView = SideMenuBottomView.createView()
-        bottomView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - bottomViewHeight, width: leftSideMenuWidth, height: bottomViewHeight)
+        bottomView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - bottomViewHeight, width: kMenuWidth, height: bottomViewHeight)
+        bottomView.backgroundColor = kBackgroundColor
         self.view.addSubview(bottomView)
         
     }
@@ -50,18 +53,29 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
 
 extension SideMenuViewController {
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let tmpView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 10))
+        tmpView.backgroundColor = UIColor.clear
+        return tmpView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.titleArray[section].count
+        return self.titleArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50.0
+        return 47.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! SideMenuTableViewCell
         cell.iconImgView.image = UIImage(named: self.imageArray[indexPath.row])
         cell.titleLabel.text = self.titleArray[indexPath.row]
+        cell.backgroundColor = kBackgroundColor
         return cell
     }
 }
