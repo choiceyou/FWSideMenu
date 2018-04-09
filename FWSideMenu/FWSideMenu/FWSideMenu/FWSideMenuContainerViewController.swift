@@ -58,7 +58,7 @@ private enum FWSideMenuPanDirection: Int {
     case right
 }
 
-typealias FWSideMenuVoidBlock = () -> Void
+public typealias FWSideMenuVoidBlock = () -> Void
 fileprivate let FWSideMenuStateNotificationEvent = "FWSideMenuStateNotificationEvent"
 
 
@@ -123,14 +123,10 @@ open class FWSideMenuContainerViewController: UIViewController, UIGestureRecogni
     /// 拖动状态
     @objc public var sideMenuPanMode: FWSideMenuPanMode = .defaults
     /// 当前菜单状态
-    @objc public var sideMenuState: FWSideMenuState = .closed {
-        willSet {
-            self.setSideMenuState(state: newValue, completeBlock: nil)
-        }
-    }
+    @objc public var sideMenuState: FWSideMenuState = .closed
     
     /// 左菜单宽度
-    @objc public var leftMenuWidth: CGFloat = 270.0
+    @objc public var leftMenuWidth: CGFloat = UIScreen.main.bounds.width * 0.8
     /// 右菜单宽度
     @objc public var rightMenuWidth: CGFloat = 270.0
     
@@ -190,6 +186,13 @@ open class FWSideMenuContainerViewController: UIViewController, UIGestureRecogni
 // MARK: - 初始化方法
 extension FWSideMenuContainerViewController {
     
+    /// 类初始化方法
+    ///
+    /// - Parameters:
+    ///   - centerViewController: 中间控制器（即当前您的主控制器）
+    ///   - leftMenuViewController: 左侧菜单控制器，可为nil
+    ///   - rightMenuViewController: 右侧菜单控制器，可为nil
+    /// - Returns: self
     @objc open class func container(centerViewController: UIViewController?, leftMenuViewController: UIViewController?, rightMenuViewController: UIViewController?) -> FWSideMenuContainerViewController {
         
         let menuContainerViewController = FWSideMenuContainerViewController()
@@ -269,7 +272,7 @@ extension FWSideMenuContainerViewController {
     @objc private func centerVCTapAction(tap: UITapGestureRecognizer) {
         
         if self.sideMenuState != .closed {
-            self.sideMenuState = .closed
+            self.setSideMenuState(state: .closed, completeBlock: nil)
         }
     }
     
@@ -338,7 +341,7 @@ extension FWSideMenuContainerViewController {
                 let showMenu = (finalX < -viewWidth/2) || (finalX < -self.rightMenuWidth/2)
                 if showMenu {
                     self.panGestureVelocity = velocity.x
-                    self.sideMenuState = .rightMenuOpen
+                    self.setSideMenuState(state: .rightMenuOpen, completeBlock: nil)
                 } else {
                     self.panGestureVelocity = 0
                     self.setCenterViewControllerOffset(offset: 0, animated: true, completeBlock: nil)
@@ -347,7 +350,7 @@ extension FWSideMenuContainerViewController {
                 let hideMenu = (finalX < adjustedOrigin.x)
                 if hideMenu {
                     self.panGestureVelocity = velocity.x
-                    self.sideMenuState = .closed
+                    self.setSideMenuState(state: .closed, completeBlock: nil)
                 } else {
                     self.panGestureVelocity = 0
                     self.setCenterViewControllerOffset(offset: adjustedOrigin.x, animated: true, completeBlock: nil)
@@ -386,7 +389,7 @@ extension FWSideMenuContainerViewController {
                 let showMenu = (finalX > viewWidth/2) || (finalX > self.leftMenuWidth/2)
                 if showMenu {
                     self.panGestureVelocity = velocity.x
-                    self.sideMenuState = .leftMenuOpen
+                    self.setSideMenuState(state: .leftMenuOpen, completeBlock: nil)
                 } else {
                     self.panGestureVelocity = 0
                     self.setCenterViewControllerOffset(offset: 0, animated: true, completeBlock: nil)
@@ -395,7 +398,7 @@ extension FWSideMenuContainerViewController {
                 let hideMenu = (finalX > adjustedOrigin.x)
                 if hideMenu {
                     self.panGestureVelocity = velocity.x
-                    self.sideMenuState = .closed
+                    self.setSideMenuState(state: .closed, completeBlock: nil)
                 } else {
                     self.panGestureVelocity = 0
                     self.setCenterViewControllerOffset(offset: adjustedOrigin.x, animated: true, completeBlock: nil)
@@ -484,6 +487,8 @@ extension FWSideMenuContainerViewController {
         
         let innerCompleteBlock = { [weak self] in
             
+            self?.sideMenuState = state
+            
             self?.setUserInteractionStateForCenterViewController()
             let eventType: FWSideMenuStateEvent = (self?.sideMenuState == .closed) ? .didClose : .didOpen
             self?.sendStateEventNotification(event: eventType)
@@ -556,6 +561,30 @@ extension FWSideMenuContainerViewController {
         
         self.menuContainerView.bringSubview(toFront: self.rightMenuViewController!.view)
         self.setCenterViewControllerOffset(offset: -self.rightMenuWidth, animated: true, completeBlock: completeBolck)
+    }
+    
+    /// 点击切换左菜单
+    ///
+    /// - Parameter completeBolck: 完成回调
+    @objc public func toggleLeftSideMenu(completeBolck: (FWSideMenuVoidBlock?) = nil) {
+        
+        if self.sideMenuState == .leftMenuOpen {
+            self.setSideMenuState(state: .closed, completeBlock: completeBolck)
+        } else {
+            self.setSideMenuState(state: .leftMenuOpen, completeBlock: completeBolck)
+        }
+    }
+    
+    /// 点击切换右菜单
+    ///
+    /// - Parameter completeBolck: 完成回调
+    @objc public func toggleRightSideMenu(completeBolck: (FWSideMenuVoidBlock?) = nil) {
+        
+        if self.sideMenuState == .rightMenuOpen {
+            self.setSideMenuState(state: .closed, completeBlock: completeBolck)
+        } else {
+            self.setSideMenuState(state: .rightMenuOpen, completeBlock: completeBolck)
+        }
     }
 }
 

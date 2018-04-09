@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SideMenuBottomView" customModule="FWSideMenu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qq_setting_setting" translatesAutoresizingMaskIntoConstraints="NO" id="AZn-bA-BCO">
+                    <rect key="frame" x="20" y="44" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="5n8-ji-rub"/>
+                        <constraint firstAttribute="width" secondItem="AZn-bA-BCO" secondAttribute="height" multiplier="1:1" id="mhh-Q4-JCW"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N34-x2-hng">
+                    <rect key="frame" x="48" y="47.5" width="31" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qq_setting_me_nightmode_on" translatesAutoresizingMaskIntoConstraints="NO" id="zVz-7Z-Am5">
+                    <rect key="frame" x="155.5" y="44" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zVz-7Z-Am5" secondAttribute="height" multiplier="1:1" id="UKj-AS-FB8"/>
+                        <constraint firstAttribute="width" constant="24" id="bQU-eo-nKz"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="午夜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20S-Cv-WLN">
+                    <rect key="frame" x="183.5" y="47.5" width="31" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="福州" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmD-Jd-Ghq">
+                    <rect key="frame" x="314" y="47.5" width="31" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sM3-22-kS0">
+                    <rect key="frame" x="304.5" y="8.5" width="51" height="38.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <color key="textColor" red="0.13219537936947123" green="0.8702670460549089" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="20S-Cv-WLN" firstAttribute="centerY" secondItem="AZn-bA-BCO" secondAttribute="centerY" id="2d7-6e-Hbj"/>
+                <constraint firstItem="N34-x2-hng" firstAttribute="leading" secondItem="AZn-bA-BCO" secondAttribute="trailing" constant="4" id="3Y0-4G-bnO"/>
+                <constraint firstItem="20S-Cv-WLN" firstAttribute="leading" secondItem="zVz-7Z-Am5" secondAttribute="trailing" constant="4" id="BQJ-Hy-OW4"/>
+                <constraint firstAttribute="trailing" secondItem="kmD-Jd-Ghq" secondAttribute="trailing" constant="30" id="Ik1-xX-eE9"/>
+                <constraint firstItem="kmD-Jd-Ghq" firstAttribute="top" secondItem="sM3-22-kS0" secondAttribute="bottom" id="K9c-E3-ExZ"/>
+                <constraint firstItem="zVz-7Z-Am5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-20" id="Lpg-14-gd3"/>
+                <constraint firstItem="N34-x2-hng" firstAttribute="centerY" secondItem="AZn-bA-BCO" secondAttribute="centerY" id="NSD-mC-Wca"/>
+                <constraint firstItem="kmD-Jd-Ghq" firstAttribute="centerX" secondItem="sM3-22-kS0" secondAttribute="centerX" id="Opq-fN-MbZ"/>
+                <constraint firstItem="kmD-Jd-Ghq" firstAttribute="centerY" secondItem="AZn-bA-BCO" secondAttribute="centerY" id="XBf-At-mna"/>
+                <constraint firstItem="AZn-bA-BCO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="cyZ-Fe-GVA"/>
+                <constraint firstItem="zVz-7Z-Am5" firstAttribute="centerY" secondItem="AZn-bA-BCO" secondAttribute="centerY" id="kf1-mD-BoZ"/>
+                <constraint firstAttribute="bottom" secondItem="AZn-bA-BCO" secondAttribute="bottom" constant="20" id="q5E-aO-4KD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="temperatureLabel" destination="sM3-22-kS0" id="pez-Zp-kF9"/>
+            </connections>
+            <point key="canvasLocation" x="-106.5" y="15"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="qq_setting_me_nightmode_on" width="48" height="48"/>
+        <image name="qq_setting_setting" width="48" height="48"/>
+    </resources>
+</document>

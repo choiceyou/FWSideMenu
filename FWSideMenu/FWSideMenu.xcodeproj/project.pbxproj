@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4943459A207B727D007C5D41 /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49434599207B727D007C5D41 /* SideMenuHeaderView.swift */; };
+		4943459C207B7294007C5D41 /* SideMenuHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4943459B207B7294007C5D41 /* SideMenuHeaderView.xib */; };
 		4944E694207AF95B00672C28 /* UIViewController+FWSideMenuExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944E693207AF95B00672C28 /* UIViewController+FWSideMenuExtension.swift */; };
+		4944E69F207B695B00672C28 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944E69C207B695B00672C28 /* SideMenuTableViewCell.swift */; };
+		4944E6A0207B695B00672C28 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944E69D207B695B00672C28 /* SideMenuViewController.swift */; };
+		4944E6A1207B695B00672C28 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4944E69E207B695B00672C28 /* SideMenuTableViewCell.xib */; };
+		4944E6A3207B698200672C28 /* SideMenuBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944E6A2207B698200672C28 /* SideMenuBottomView.swift */; };
+		4944E6A5207B699100672C28 /* SideMenuBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4944E6A4207B699100672C28 /* SideMenuBottomView.xib */; };
 		49AD5C6D2079B173000DD014 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD5C6C2079B173000DD014 /* AppDelegate.swift */; };
 		49AD5C742079B173000DD014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49AD5C732079B173000DD014 /* Assets.xcassets */; };
 		49AD5C772079B173000DD014 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49AD5C752079B173000DD014 /* LaunchScreen.storyboard */; };
@@ -16,7 +23,6 @@
 		49AD5C9C2079B1BA000DD014 /* FWSideMenuContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD5C9B2079B1BA000DD014 /* FWSideMenuContainerViewController.swift */; };
 		49AD5C9E2079EF54000DD014 /* FWSideMenuShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD5C9D2079EF54000DD014 /* FWSideMenuShadow.swift */; };
 		49AD5CA0207A137A000DD014 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD5C9F207A137A000DD014 /* HomeViewController.swift */; };
-		49AD5CA2207A13B7000DD014 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD5CA1207A13B7000DD014 /* SideMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49434599207B727D007C5D41 /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
+		4943459B207B7294007C5D41 /* SideMenuHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuHeaderView.xib; sourceTree = "<group>"; };
 		4944E693207AF95B00672C28 /* UIViewController+FWSideMenuExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+FWSideMenuExtension.swift"; sourceTree = "<group>"; };
+		4944E69C207B695B00672C28 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		4944E69D207B695B00672C28 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		4944E69E207B695B00672C28 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		4944E6A2207B698200672C28 /* SideMenuBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuBottomView.swift; sourceTree = "<group>"; };
+		4944E6A4207B699100672C28 /* SideMenuBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuBottomView.xib; sourceTree = "<group>"; };
 		49AD5C692079B173000DD014 /* FWSideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWSideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49AD5C6C2079B173000DD014 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49AD5C732079B173000DD014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,7 +65,6 @@
 		49AD5C9B2079B1BA000DD014 /* FWSideMenuContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWSideMenuContainerViewController.swift; sourceTree = "<group>"; };
 		49AD5C9D2079EF54000DD014 /* FWSideMenuShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWSideMenuShadow.swift; sourceTree = "<group>"; };
 		49AD5C9F207A137A000DD014 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		49AD5CA1207A13B7000DD014 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +92,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4944E69B207B695B00672C28 /* QQSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4944E69D207B695B00672C28 /* SideMenuViewController.swift */,
+				4944E69C207B695B00672C28 /* SideMenuTableViewCell.swift */,
+				4944E69E207B695B00672C28 /* SideMenuTableViewCell.xib */,
+				4944E6A2207B698200672C28 /* SideMenuBottomView.swift */,
+				4944E6A4207B699100672C28 /* SideMenuBottomView.xib */,
+				49434599207B727D007C5D41 /* SideMenuHeaderView.swift */,
+				4943459B207B7294007C5D41 /* SideMenuHeaderView.xib */,
+			);
+			path = QQSideMenu;
+			sourceTree = "<group>";
+		};
 		49AD5C602079B173000DD014 = {
 			isa = PBXGroup;
 			children = (
@@ -104,9 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				49AD5C9A2079B190000DD014 /* FWSideMenu */,
+				4944E69B207B695B00672C28 /* QQSideMenu */,
 				49AD5C6C2079B173000DD014 /* AppDelegate.swift */,
 				49AD5C9F207A137A000DD014 /* HomeViewController.swift */,
-				49AD5CA1207A13B7000DD014 /* SideMenuViewController.swift */,
 				49AD5C732079B173000DD014 /* Assets.xcassets */,
 				49AD5C752079B173000DD014 /* LaunchScreen.storyboard */,
 				49AD5C782079B173000DD014 /* Info.plist */,
@@ -249,7 +275,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4944E6A1207B695B00672C28 /* SideMenuTableViewCell.xib in Resources */,
+				4944E6A5207B699100672C28 /* SideMenuBottomView.xib in Resources */,
 				49AD5C772079B173000DD014 /* LaunchScreen.storyboard in Resources */,
+				4943459C207B7294007C5D41 /* SideMenuHeaderView.xib in Resources */,
 				49AD5C742079B173000DD014 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,8 +307,11 @@
 				49AD5CA0207A137A000DD014 /* HomeViewController.swift in Sources */,
 				4944E694207AF95B00672C28 /* UIViewController+FWSideMenuExtension.swift in Sources */,
 				49AD5C6D2079B173000DD014 /* AppDelegate.swift in Sources */,
+				4944E69F207B695B00672C28 /* SideMenuTableViewCell.swift in Sources */,
+				4944E6A0207B695B00672C28 /* SideMenuViewController.swift in Sources */,
+				4944E6A3207B698200672C28 /* SideMenuBottomView.swift in Sources */,
+				4943459A207B727D007C5D41 /* SideMenuHeaderView.swift in Sources */,
 				49AD5C9E2079EF54000DD014 /* FWSideMenuShadow.swift in Sources */,
-				49AD5CA2207A13B7000DD014 /* SideMenuViewController.swift in Sources */,
 				49AD5C9C2079B1BA000DD014 /* FWSideMenuContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
