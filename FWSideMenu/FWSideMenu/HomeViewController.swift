@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white
         
+        
+        // 为了让解决看起来更舒服，加了一些假画面，不是重点。。。
         let leftBtn = UIButton(type: .custom)
         leftBtn.frame = CGRect(x: -5, y: 0, width: 30, height: 30)
         leftBtn.setBackgroundImage(UIImage(named: "header"), for: .normal)
