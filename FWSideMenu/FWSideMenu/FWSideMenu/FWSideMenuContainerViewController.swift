@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import QuartzCore
 
-/// 拖动状态
+/// 拖动模式
 ///
 /// - none: 不能拖动
 /// - centerViewController: 能在centerViewController上拖动
@@ -239,6 +239,31 @@ extension FWSideMenuContainerViewController {
 // MARK: - 手势
 extension FWSideMenuContainerViewController {
     
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if self.sideMenuPanMode == .defaults {
+            return true
+        } else if self.sideMenuPanMode == .none {
+            return false
+        } else if self.sideMenuPanMode == .centerViewController {
+            if gestureRecognizer == self.centerPanGestureRecognizer {
+                return true
+            } else {
+                return false
+            }
+        } else if self.sideMenuPanMode == .sideMenu {
+            if gestureRecognizer == self.sideMenuPanGestureRecognizer {
+                return true
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+    
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
+    
     private func addGestureRecognizers() {
         
         self.addCenterGestureRecognizers()
@@ -268,6 +293,11 @@ extension FWSideMenuContainerViewController {
         childViewController?.willMove(toParentViewController: nil)
         childViewController?.removeFromParentViewController()
         childViewController?.view.removeFromSuperview()
+    }
+    
+    private func sideMenuPanEnabled() {
+        
+        
     }
     
     @objc private func centerVCTapAction(tap: UITapGestureRecognizer) {

@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ceshi.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "group_qrcode_shadow@2x.png",
       "scale" : "2x"
     },
     {

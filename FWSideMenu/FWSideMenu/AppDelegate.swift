@@ -8,6 +8,15 @@
 
 import UIKit
 
+/// 状态栏高度
+let kStatusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+/// 导航栏高度
+let kNavBarHeight: CGFloat = 44.0
+/// 状态栏+导航栏的高度
+let kStatusAndNavBarHeight = kStatusBarHeight + kNavBarHeight
+/// 底部菜单栏高度
+let kTabBarHeight: CGFloat = (UIApplication.shared.statusBarFrame.size.height > 20.0 ? 83.0:49.0)
+
 let kMenuWidth = UIScreen.main.bounds.width * 0.82
 
 

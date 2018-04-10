@@ -28,6 +28,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let textAttrs = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18.0)]
         self.navigationController?.navigationBar.titleTextAttributes = textAttrs
+        
+        // 本页面开启支持打开侧滑菜单
+        self.menuContainerViewController.sideMenuPanMode = .defaults
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // 离开本页面时关闭支持打开侧滑菜单
+        self.menuContainerViewController.sideMenuPanMode = .none
     }
     
     override func viewDidLoad() {
@@ -35,10 +47,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.view.backgroundColor = UIColor.white
         self.navigationItem.title = "消息"
+        self.view.frame.size.height = UIScreen.main.bounds.height - kStatusAndNavBarHeight - kTabBarHeight
+        
         
         let buttonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "header"), style: .plain, target: self, action: #selector(leftBtnAction))
         buttonItem.imageInsets = UIEdgeInsetsMake(0, -6, 0, 0)
         self.navigationItem.leftBarButtonItem = buttonItem
+        
+        let buttonItem2: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "mqz_nav_add"), style: .plain, target: self, action: #selector(leftBtnAction))
+        buttonItem2.imageInsets = UIEdgeInsetsMake(0, 0, 0, -6)
+        self.navigationItem.rightBarButtonItem = buttonItem2
         
         
         self.view.addSubview(self.tableView)
@@ -69,5 +87,9 @@ extension HomeViewController {
         cell.nameLabel.text = self.titleArray[indexPath.row]
         cell.decLabel.text = self.decArray[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("您当前点击了第 \(indexPath.row + 1) 行")
     }
 }

@@ -9,9 +9,6 @@
 import Foundation
 import UIKit
 
-/// 底部菜单栏高度
-let kTabBarHeight: CGFloat = (UIApplication.shared.statusBarFrame.size.height > 20.0 ? 83.0:49.0)
-
 class FWTabBar: UITabBar {
     
     override init(frame: CGRect) {
