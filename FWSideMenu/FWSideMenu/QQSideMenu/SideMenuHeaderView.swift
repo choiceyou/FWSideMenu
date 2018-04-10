@@ -12,6 +12,9 @@ import UIKit
 class SideMenuHeaderView: UIView {
     
     @IBOutlet weak var headerImgView: UIImageView!
+    @IBOutlet weak var grayView: UIView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var signLabel: UILabel!
     
     static func createView() -> SideMenuHeaderView {
         return Bundle.main.loadNibNamed("SideMenuHeaderView", owner: nil, options: nil)!.last as! SideMenuHeaderView
@@ -24,5 +27,7 @@ class SideMenuHeaderView: UIView {
         self.headerImgView.clipsToBounds = true
         self.headerImgView.layer.borderColor = UIColor.white.cgColor
         self.headerImgView.layer.borderWidth = 2
+        
+        self.grayView.backgroundColor = UIColor(white: 0.05, alpha: 0.05)
     }
 }
