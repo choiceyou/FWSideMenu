@@ -15,6 +15,7 @@ class SideMenuHeaderView: UIView {
     @IBOutlet weak var grayView: UIView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var signLabel: UILabel!
+    @IBOutlet weak var codeTopConstraint: NSLayoutConstraint!
     
     static func createView() -> SideMenuHeaderView {
         return Bundle.main.loadNibNamed("SideMenuHeaderView", owner: nil, options: nil)!.last as! SideMenuHeaderView
@@ -29,5 +30,7 @@ class SideMenuHeaderView: UIView {
         self.headerImgView.layer.borderWidth = 2
         
         self.grayView.backgroundColor = UIColor(white: 0.05, alpha: 0.05)
+        
+        self.codeTopConstraint.constant = UIApplication.shared.statusBarFrame.height + 5
     }
 }

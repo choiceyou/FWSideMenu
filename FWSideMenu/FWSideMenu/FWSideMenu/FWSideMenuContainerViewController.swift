@@ -248,6 +248,7 @@ extension FWSideMenuContainerViewController {
     private func addCenterGestureRecognizers() {
         if self.centerViewController != nil {
             self.centerViewController?.view.addGestureRecognizer(self.centerTapGestureRecognizer!)
+            self.centerTapGestureRecognizer?.isEnabled = false
             self.centerViewController?.view.addGestureRecognizer(self.centerPanGestureRecognizer!)
         }
     }
@@ -660,6 +661,12 @@ extension FWSideMenuContainerViewController {
     }
     
     private func sendStateEventNotification(event: FWSideMenuStateEvent) {
+        
+        if event == .didClose {
+            self.centerTapGestureRecognizer?.isEnabled = false
+        } else {
+            self.centerTapGestureRecognizer?.isEnabled = true
+        }
         
         let userInfo = ["eventType": NSNumber(value: Int8(event.rawValue))]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: FWSideMenuStateNotificationEvent), object: self, userInfo: userInfo)

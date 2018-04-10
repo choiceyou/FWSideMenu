@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let menuContrainer = FWSideMenuContainerViewController.container(centerViewController: UINavigationController(rootViewController: HomeViewController()), leftMenuViewController: SideMenuViewController(), rightMenuViewController: SideMenuViewController())
+        let menuContrainer = FWSideMenuContainerViewController.container(centerViewController: FWTabBarController(), leftMenuViewController: SideMenuViewController(), rightMenuViewController: SideMenuViewController())
         menuContrainer.leftMenuWidth = kMenuWidth
         menuContrainer.rightMenuWidth = kMenuWidth
         
@@ -57,3 +57,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    
+    class func resizableImage(imageName: String, edgeInsets: UIEdgeInsets) -> UIImage? {
+        
+        let image = UIImage(named: imageName)
+        if image == nil {
+            return nil
+        }
+        let imageW = image!.size.width
+        let imageH = image!.size.height
+        
+        return image?.resizableImage(withCapInsets: UIEdgeInsetsMake(imageH * edgeInsets.top, imageW * edgeInsets.left, imageH * edgeInsets.bottom, imageW * edgeInsets.right), resizingMode: .stretch)
+    }
+}
