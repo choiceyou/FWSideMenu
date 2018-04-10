@@ -28,8 +28,6 @@ class HomeViewController: UIViewController {
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
         
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "header2"), style: .done, target: self, action: #selector(leftBtnAction))
-        
         let tmpImgView = UIImageView(frame: self.view.bounds)
         tmpImgView.image = UIImage(named: "ceshi")
         self.view.addSubview(tmpImgView)
