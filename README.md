@@ -58,7 +58,11 @@ pod 'FWSideMenu'
 
 ### OC：
 ```oc
-
+UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
+    
+[FWSideMenuContainerViewController containerWithCenterViewController: nav 
+                                              leftMenuViewController:[[MenuViewController alloc] init] 
+                                             rightMenuViewController:nil];
 ```
 
 
