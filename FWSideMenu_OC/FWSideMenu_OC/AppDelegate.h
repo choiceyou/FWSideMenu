@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FWSideMenu/FWSideMenu-Swift.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) FWSideMenuContainerViewController *sideMenuContainer;
 
 @end
 

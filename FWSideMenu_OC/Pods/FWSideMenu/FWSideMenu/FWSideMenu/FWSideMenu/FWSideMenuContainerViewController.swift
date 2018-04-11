@@ -62,7 +62,7 @@ public typealias FWSideMenuVoidBlock = () -> Void
 fileprivate let FWSideMenuStateNotificationEvent = "FWSideMenuStateNotificationEvent"
 
 
-open class FWSideMenuContainerViewController: UIViewController, UIGestureRecognizerDelegate {
+@objc open class FWSideMenuContainerViewController: UIViewController, UIGestureRecognizerDelegate {
     
     /// 中间控制器
     @objc public var centerViewController: UIViewController? {

@@ -87,11 +87,9 @@ extension SideMenuViewController {
             let tmpVC = self.menuContainerViewController.centerViewController!.childViewControllers[0]
             if tmpVC.isKind(of: UINavigationController.self) {
                 navigationController = tmpVC as? UINavigationController
-            } else if tmpVC.isKind(of: UIViewController.self) {
-                navigationController = tmpVC.navigationController
             }
         } else if self.menuContainerViewController.centerViewController!.isKind(of: UINavigationController.self) {
-           navigationController = self.menuContainerViewController.centerViewController?.navigationController
+            navigationController = self.menuContainerViewController.centerViewController as! UINavigationController
         }
         
         if navigationController != nil {
