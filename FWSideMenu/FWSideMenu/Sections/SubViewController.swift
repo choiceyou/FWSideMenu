@@ -16,5 +16,10 @@ class SubViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white
         self.navigationItem.title = "子控制器"
+        
+        let emptyImgView = UIImageView(image: UIImage(named: "img_empty_photo"))
+        emptyImgView.center = self.view.center
+        self.view.addSubview(emptyImgView)
+        
     }
 }
