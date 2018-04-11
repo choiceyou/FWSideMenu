@@ -13,7 +13,7 @@ let kStatusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
 /// 导航栏高度
 let kNavBarHeight: CGFloat = 44.0
 /// 状态栏+导航栏的高度
-let kStatusAndNavBarHeight = kStatusBarHeight + kNavBarHeight
+let kStatusAndNavBarHeight: CGFloat = (kStatusBarHeight + kNavBarHeight)
 /// 底部菜单栏高度
 let kTabBarHeight: CGFloat = (UIApplication.shared.statusBarFrame.size.height > 20.0 ? 83.0:49.0)
 
