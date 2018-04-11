@@ -514,7 +514,12 @@ extension FWSideMenuContainerViewController {
         self.menuContainerView.bringSubview(toFront: self.rightMenuViewController!.view)
     }
     
-    private func setSideMenuState(state: FWSideMenuState, completeBlock: (FWSideMenuVoidBlock?) = nil) {
+    /// 设置侧滑菜单状态
+    ///
+    /// - Parameters:
+    ///   - state: 状态
+    ///   - completeBlock: 回调
+    @objc public func setSideMenuState(state: FWSideMenuState, completeBlock: (FWSideMenuVoidBlock?) = nil) {
         
         let innerCompleteBlock = { [weak self] in
             

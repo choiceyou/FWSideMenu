@@ -34,7 +34,7 @@ extension FWTabBarController {
         
         setValue(FWTabBar(), forKey: "tabBar")
         
-        let vcArray:[UIViewController] = [HomeViewController(), BuddyViewController(), SeeViewController(), QworldViewController()]
+        let vcArray:[UIViewController] = [RecentViewController(), BuddyViewController(), SeeViewController(), QworldViewController()]
         let titleArray = [("消息", "recent"), ("联系人", "buddy"), ("看点", "see"), ("动态", "qworld")]
         for (index, vc) in vcArray.enumerated() {
             // 需要title的情况

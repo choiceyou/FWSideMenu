@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4907C59B207C940800186676 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907C59A207C940800186676 /* HomeViewController.swift */; };
-		4907C59D207C955D00186676 /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907C59C207C955D00186676 /* RecentTableViewCell.swift */; };
-		4907C59F207C956900186676 /* RecentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4907C59E207C956900186676 /* RecentTableViewCell.xib */; };
-		4907C5A1207CA72800186676 /* BuddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907C5A0207CA72800186676 /* BuddyViewController.swift */; };
-		4907C5A3207CA73B00186676 /* SeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907C5A2207CA73B00186676 /* SeeViewController.swift */; };
-		4907C5A5207CA74E00186676 /* QworldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907C5A4207CA74E00186676 /* QworldViewController.swift */; };
 		4943459A207B727D007C5D41 /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49434599207B727D007C5D41 /* SideMenuHeaderView.swift */; };
 		4943459C207B7294007C5D41 /* SideMenuHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4943459B207B7294007C5D41 /* SideMenuHeaderView.xib */; };
 		49443645207C4361005AAC65 /* FWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49443644207C4361005AAC65 /* FWNavigationController.swift */; };
@@ -24,6 +18,13 @@
 		4944E6A1207B695B00672C28 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4944E69E207B695B00672C28 /* SideMenuTableViewCell.xib */; };
 		4944E6A3207B698200672C28 /* SideMenuBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944E6A2207B698200672C28 /* SideMenuBottomView.swift */; };
 		4944E6A5207B699100672C28 /* SideMenuBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4944E6A4207B699100672C28 /* SideMenuBottomView.xib */; };
+		495D8EAF207D8EFA00363A11 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495D8EA9207D8EFA00363A11 /* RecentViewController.swift */; };
+		495D8EB0207D8EFA00363A11 /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495D8EAA207D8EFA00363A11 /* RecentTableViewCell.swift */; };
+		495D8EB1207D8EFA00363A11 /* RecentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495D8EAB207D8EFA00363A11 /* RecentTableViewCell.xib */; };
+		495D8EB2207D8EFA00363A11 /* SeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495D8EAC207D8EFA00363A11 /* SeeViewController.swift */; };
+		495D8EB3207D8EFA00363A11 /* BuddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495D8EAD207D8EFA00363A11 /* BuddyViewController.swift */; };
+		495D8EB4207D8EFA00363A11 /* QworldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495D8EAE207D8EFA00363A11 /* QworldViewController.swift */; };
+		495D8EB6207D904500363A11 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495D8EB5207D904500363A11 /* SubViewController.swift */; };
 		49AD5C6D2079B173000DD014 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD5C6C2079B173000DD014 /* AppDelegate.swift */; };
 		49AD5C742079B173000DD014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49AD5C732079B173000DD014 /* Assets.xcassets */; };
 		49AD5C772079B173000DD014 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49AD5C752079B173000DD014 /* LaunchScreen.storyboard */; };
@@ -51,12 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4907C59A207C940800186676 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		4907C59C207C955D00186676 /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
-		4907C59E207C956900186676 /* RecentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTableViewCell.xib; sourceTree = "<group>"; };
-		4907C5A0207CA72800186676 /* BuddyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyViewController.swift; sourceTree = "<group>"; };
-		4907C5A2207CA73B00186676 /* SeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeViewController.swift; sourceTree = "<group>"; };
-		4907C5A4207CA74E00186676 /* QworldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QworldViewController.swift; sourceTree = "<group>"; };
 		49434599207B727D007C5D41 /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 		4943459B207B7294007C5D41 /* SideMenuHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuHeaderView.xib; sourceTree = "<group>"; };
 		49443644207C4361005AAC65 /* FWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWNavigationController.swift; sourceTree = "<group>"; };
@@ -68,6 +63,13 @@
 		4944E69E207B695B00672C28 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		4944E6A2207B698200672C28 /* SideMenuBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuBottomView.swift; sourceTree = "<group>"; };
 		4944E6A4207B699100672C28 /* SideMenuBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuBottomView.xib; sourceTree = "<group>"; };
+		495D8EA9207D8EFA00363A11 /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
+		495D8EAA207D8EFA00363A11 /* RecentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
+		495D8EAB207D8EFA00363A11 /* RecentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentTableViewCell.xib; sourceTree = "<group>"; };
+		495D8EAC207D8EFA00363A11 /* SeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeViewController.swift; sourceTree = "<group>"; };
+		495D8EAD207D8EFA00363A11 /* BuddyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddyViewController.swift; sourceTree = "<group>"; };
+		495D8EAE207D8EFA00363A11 /* QworldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QworldViewController.swift; sourceTree = "<group>"; };
+		495D8EB5207D904500363A11 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		49AD5C692079B173000DD014 /* FWSideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWSideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49AD5C6C2079B173000DD014 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49AD5C732079B173000DD014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,19 +110,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4907C599207C940800186676 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				4907C59A207C940800186676 /* HomeViewController.swift */,
-				4907C59C207C955D00186676 /* RecentTableViewCell.swift */,
-				4907C59E207C956900186676 /* RecentTableViewCell.xib */,
-				4907C5A0207CA72800186676 /* BuddyViewController.swift */,
-				4907C5A2207CA73B00186676 /* SeeViewController.swift */,
-				4907C5A4207CA74E00186676 /* QworldViewController.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		49443643207C4351005AAC65 /* AppBars */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +132,20 @@
 				4943459B207B7294007C5D41 /* SideMenuHeaderView.xib */,
 			);
 			path = QQSideMenu;
+			sourceTree = "<group>";
+		};
+		495D8EA8207D8EFA00363A11 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				495D8EA9207D8EFA00363A11 /* RecentViewController.swift */,
+				495D8EAA207D8EFA00363A11 /* RecentTableViewCell.swift */,
+				495D8EAB207D8EFA00363A11 /* RecentTableViewCell.xib */,
+				495D8EAC207D8EFA00363A11 /* SeeViewController.swift */,
+				495D8EAD207D8EFA00363A11 /* BuddyViewController.swift */,
+				495D8EAE207D8EFA00363A11 /* QworldViewController.swift */,
+				495D8EB5207D904500363A11 /* SubViewController.swift */,
+			);
+			path = Sections;
 			sourceTree = "<group>";
 		};
 		49AD5C602079B173000DD014 = {
@@ -170,7 +173,7 @@
 			children = (
 				49AD5C9A2079B190000DD014 /* FWSideMenu */,
 				4944E69B207B695B00672C28 /* QQSideMenu */,
-				4907C599207C940800186676 /* Home */,
+				495D8EA8207D8EFA00363A11 /* Sections */,
 				49443643207C4351005AAC65 /* AppBars */,
 				49AD5C6C2079B173000DD014 /* AppDelegate.swift */,
 				49AD5C732079B173000DD014 /* Assets.xcassets */,
@@ -319,7 +322,7 @@
 				4944E6A5207B699100672C28 /* SideMenuBottomView.xib in Resources */,
 				49AD5C772079B173000DD014 /* LaunchScreen.storyboard in Resources */,
 				4943459C207B7294007C5D41 /* SideMenuHeaderView.xib in Resources */,
-				4907C59F207C956900186676 /* RecentTableViewCell.xib in Resources */,
+				495D8EB1207D8EFA00363A11 /* RecentTableViewCell.xib in Resources */,
 				49AD5C742079B173000DD014 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,19 +351,20 @@
 				49443648207C4466005AAC65 /* FWTabBarController.swift in Sources */,
 				4944E694207AF95B00672C28 /* UIViewController+FWSideMenuExtension.swift in Sources */,
 				49AD5C6D2079B173000DD014 /* AppDelegate.swift in Sources */,
-				4907C5A3207CA73B00186676 /* SeeViewController.swift in Sources */,
 				4944E69F207B695B00672C28 /* SideMenuTableViewCell.swift in Sources */,
 				4944E6A0207B695B00672C28 /* SideMenuViewController.swift in Sources */,
-				4907C5A1207CA72800186676 /* BuddyViewController.swift in Sources */,
 				49443649207C4466005AAC65 /* FWTabBar.swift in Sources */,
+				495D8EB2207D8EFA00363A11 /* SeeViewController.swift in Sources */,
 				4944E6A3207B698200672C28 /* SideMenuBottomView.swift in Sources */,
 				49443645207C4361005AAC65 /* FWNavigationController.swift in Sources */,
-				4907C59D207C955D00186676 /* RecentTableViewCell.swift in Sources */,
+				495D8EB3207D8EFA00363A11 /* BuddyViewController.swift in Sources */,
+				495D8EB0207D8EFA00363A11 /* RecentTableViewCell.swift in Sources */,
 				4943459A207B727D007C5D41 /* SideMenuHeaderView.swift in Sources */,
+				495D8EAF207D8EFA00363A11 /* RecentViewController.swift in Sources */,
+				495D8EB4207D8EFA00363A11 /* QworldViewController.swift in Sources */,
 				49AD5C9E2079EF54000DD014 /* FWSideMenuShadow.swift in Sources */,
-				4907C5A5207CA74E00186676 /* QworldViewController.swift in Sources */,
 				49AD5C9C2079B1BA000DD014 /* FWSideMenuContainerViewController.swift in Sources */,
-				4907C59B207C940800186676 /* HomeViewController.swift in Sources */,
+				495D8EB6207D904500363A11 /* SubViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

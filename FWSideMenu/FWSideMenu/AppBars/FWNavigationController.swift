@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 typealias FWVoidBlock = () -> Void
+let navTitleFont: CGFloat = 18.0
+
 
 class FWNavigationController: UINavigationController {
     
@@ -19,7 +21,7 @@ class FWNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let textAttrs = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18.0)]
+        let textAttrs = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: navTitleFont)]
         navigationBar.titleTextAttributes = textAttrs
         
         navigationBar.setBackgroundImage(AppDelegate.resizableImage(imageName: "header_bg_message", edgeInsets: UIEdgeInsetsMake(0, 0, 0, 0)), for: .default)
@@ -51,6 +53,8 @@ class FWNavigationController: UINavigationController {
             
             viewController.hidesBottomBarWhenPushed = true
             
+            // 设置状态栏
+            UIApplication.shared.statusBarStyle = .default
         }
         
         super.pushViewController(viewController, animated: animated)

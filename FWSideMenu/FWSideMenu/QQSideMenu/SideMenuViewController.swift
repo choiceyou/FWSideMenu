@@ -78,4 +78,26 @@ extension SideMenuViewController {
         cell.backgroundColor = kBackgroundColor
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var navigationController: UINavigationController?
+        
+        if self.menuContainerViewController.centerViewController!.isKind(of: UITabBarController.self) {
+            let tmpVC = self.menuContainerViewController.centerViewController!.childViewControllers[0]
+            if tmpVC.isKind(of: UINavigationController.self) {
+                navigationController = tmpVC as? UINavigationController
+            } else if tmpVC.isKind(of: UIViewController.self) {
+                navigationController = tmpVC.navigationController
+            }
+        } else if self.menuContainerViewController.centerViewController!.isKind(of: UINavigationController.self) {
+           navigationController = self.menuContainerViewController.centerViewController?.navigationController
+        }
+        
+        if navigationController != nil {
+            navigationController!.pushViewController(SubViewController(), animated: true)
+        }
+        
+        self.menuContainerViewController.setSideMenuState(state: .closed, completeBlock: nil)
+    }
 }
