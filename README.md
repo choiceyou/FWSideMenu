@@ -84,5 +84,5 @@ FWSideMenuContainerViewController.container(centerViewController: FWTabBarContro
 
 ## 结尾语：
 
-- 使用过程中发现bug请issues；
+- 使用过程中发现bug请issues或（QQ群：670698309）；
 - 有新的需求欢迎提出；
