@@ -4,9 +4,13 @@ PODS:
 DEPENDENCIES:
   - FWSideMenu
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - FWSideMenu
+
 SPEC CHECKSUMS:
   FWSideMenu: bb55a6e34d5a1aff0527ccdaaa25ae02915dd273
 
 PODFILE CHECKSUM: 9b72adf5f42a17e026b6cb0fe52e547341a4b78b
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

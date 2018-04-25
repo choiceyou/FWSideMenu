@@ -16,6 +16,24 @@
 
 @implementation ViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // 打开侧滑菜单
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    delegate.sideMenuContainer.sideMenuPanMode = FWSideMenuPanModeDefaults;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    // 关闭侧滑菜单
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    delegate.sideMenuContainer.sideMenuPanMode = FWSideMenuPanModeNone;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

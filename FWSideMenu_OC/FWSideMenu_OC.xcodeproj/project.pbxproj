@@ -179,7 +179,6 @@
 				49DAFBB8207DDE3D0028BAF0 /* Frameworks */,
 				49DAFBB9207DDE3D0028BAF0 /* Resources */,
 				54BCFE931A27DEACF43A1506 /* [CP] Embed Pods Frameworks */,
-				0D067B3F5C1D2AF183B486D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,21 +297,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D067B3F5C1D2AF183B486D3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FWSideMenu_OC/Pods-FWSideMenu_OC-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		54BCFE931A27DEACF43A1506 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
