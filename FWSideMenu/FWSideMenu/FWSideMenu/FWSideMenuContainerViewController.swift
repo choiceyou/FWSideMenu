@@ -533,11 +533,14 @@ extension FWSideMenuContainerViewController {
         
         let innerCompleteBlock = { [weak self] in
             
-            self?.sideMenuState = state
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.sideMenuState = state
             
-            self?.setUserInteractionStateForCenterViewController()
-            let eventType: FWSideMenuStateEvent = (self?.sideMenuState == .closed) ? .didClose : .didOpen
-            self?.sendStateEventNotification(event: eventType)
+            strongSelf.setUserInteractionStateForCenterViewController()
+            let eventType: FWSideMenuStateEvent = (strongSelf.sideMenuState == .closed) ? .didClose : .didOpen
+            strongSelf.sendStateEventNotification(event: eventType)
             
             if completeBlock != nil {
                 completeBlock!()
