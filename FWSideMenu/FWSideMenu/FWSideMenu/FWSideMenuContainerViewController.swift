@@ -164,7 +164,7 @@ open class FWSideMenuContainerViewController: UIViewController, UIGestureRecogni
     private var isViewHasLoad = false
     
     /// 开始拖动位置
-    private var panGestureOrigin: CGPoint = CGPoint(x: 0, y: 0)
+    private var panGestureOrigin: CGPoint = CGPoint.zero
     private var panGestureVelocity: CGFloat = 0
     /// 拖动位置
     private var panGestureDirection: FWSideMenuPanDirection = .none
@@ -371,7 +371,6 @@ extension FWSideMenuContainerViewController {
         } else {
             translatedPoint.x = min(translatedPoint.x, 0)
         }
-        self.setCenterViewControllerOffset(offset: translatedPoint.x)
         
         if pan.state == .ended {
             let velocity = pan.velocity(in: view)
