@@ -6,6 +6,16 @@
 //  Copyright © 2018年 xfg. All rights reserved.
 //
 
+
+/** ************************************************
+ 
+ github地址：https://github.com/choiceyou/FWCycleScrollView
+ bug反馈、交流群：670698309
+ 
+ ***************************************************
+ */
+
+
 import Foundation
 import UIKit
 import QuartzCore
@@ -62,7 +72,7 @@ public typealias FWSideMenuVoidBlock = () -> Void
 fileprivate let FWSideMenuStateNotificationEvent = "FWSideMenuStateNotificationEvent"
 
 
-@objc open class FWSideMenuContainerViewController: UIViewController, UIGestureRecognizerDelegate {
+open class FWSideMenuContainerViewController: UIViewController, UIGestureRecognizerDelegate {
     
     /// 中间控制器
     @objc public var centerViewController: UIViewController? {
@@ -77,10 +87,12 @@ fileprivate let FWSideMenuStateNotificationEvent = "FWSideMenuStateNotificationE
                 
                 newValue?.didMove(toParentViewController: self)
                 
-                if self.sideMenuShadow != nil {
-                    self.sideMenuShadow?.shadowedView = newValue?.view
-                } else {
-                    self.sideMenuShadow = FWSideMenuShadow.shadow(sdView: newValue!.view)
+                if sideMenuShadowEnabled == true {
+                    if self.sideMenuShadow != nil {
+                        self.sideMenuShadow?.shadowedView = newValue?.view
+                    } else {
+                        self.sideMenuShadow = FWSideMenuShadow.shadow(sdView: newValue!.view)
+                    }
                 }
                 
                 self.addCenterGestureRecognizers()
@@ -135,6 +147,18 @@ fileprivate let FWSideMenuStateNotificationEvent = "FWSideMenuStateNotificationE
     /// 左（右）菜单滑动相对于本身的宽度值的 1/menuSlideAnimationFactor
     @objc public var menuSlideAnimationFactor: CGFloat = 3.0
     
+    /// 打开左（右）菜单时中间视图是否需要遮罩层
+    @objc public var centerMaskViewEnabled: Bool = true
+    /// 打开左（右）菜单时中间视图边上是否需要阴影
+    @objc public var sideMenuShadowEnabled: Bool = false
+    
+    /// 中间控制器的灰色遮罩层
+    private var centerMaskView: UIView = {
+        
+        let centerMaskView = UIView(frame: UIScreen.main.bounds)
+        centerMaskView.isUserInteractionEnabled = false
+        return centerMaskView
+    }()
     
     /// 侧边菜单容器视图
     private var menuContainerView: UIView = {
@@ -154,7 +178,7 @@ fileprivate let FWSideMenuStateNotificationEvent = "FWSideMenuStateNotificationE
     private var isViewHasLoad = false
     
     /// 开始拖动位置
-    private var panGestureOrigin: CGPoint = CGPoint(x: 0, y: 0)
+    private var panGestureOrigin: CGPoint = CGPoint.zero
     private var panGestureVelocity: CGFloat = 0
     /// 拖动位置
     private var panGestureDirection: FWSideMenuPanDirection = .none
@@ -361,7 +385,6 @@ extension FWSideMenuContainerViewController {
         } else {
             translatedPoint.x = min(translatedPoint.x, 0)
         }
-        self.setCenterViewControllerOffset(offset: translatedPoint.x)
         
         if pan.state == .ended {
             let velocity = pan.velocity(in: view)
@@ -523,11 +546,14 @@ extension FWSideMenuContainerViewController {
         
         let innerCompleteBlock = { [weak self] in
             
-            self?.sideMenuState = state
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.sideMenuState = state
             
-            self?.setUserInteractionStateForCenterViewController()
-            let eventType: FWSideMenuStateEvent = (self?.sideMenuState == .closed) ? .didClose : .didOpen
-            self?.sendStateEventNotification(event: eventType)
+            strongSelf.setUserInteractionStateForCenterViewController()
+            let eventType: FWSideMenuStateEvent = (strongSelf.sideMenuState == .closed) ? .didClose : .didOpen
+            strongSelf.sendStateEventNotification(event: eventType)
             
             if completeBlock != nil {
                 completeBlock!()
@@ -630,6 +656,25 @@ extension FWSideMenuContainerViewController {
     private func setCenterViewControllerOffset(offset: CGFloat) {
         
         self.centerViewController?.view.frame.origin.x = offset
+        
+        if centerMaskViewEnabled == true {
+            let foffset = fabsf(Float(offset))
+            var percent = 0.0
+            if offset > 0 {
+                percent = Double(foffset / Float(leftMenuWidth))
+            } else {
+                percent = Double(foffset / Float(rightMenuWidth))
+            }
+            percent = percent * 0.4
+            
+            if foffset > 5 && self.centerMaskView.superview == nil {
+                self.centerViewController?.view.addSubview(self.centerMaskView)
+                self.centerViewController?.view.bringSubview(toFront: self.centerMaskView)
+            } else if foffset <= 5 && self.centerMaskView.superview != nil {
+                self.centerMaskView.removeFromSuperview()
+            }
+            self.centerMaskView.backgroundColor = UIColor.black.withAlphaComponent(CGFloat(percent))
+        }
         
         if !self.menuSlideAnimationEnabled {
             return

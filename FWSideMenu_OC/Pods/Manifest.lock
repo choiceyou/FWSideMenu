@@ -1,16 +1,16 @@
 PODS:
-  - FWSideMenu (2.0.1)
+  - FWSideMenu (2.0.2)
 
 DEPENDENCIES:
   - FWSideMenu
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - FWSideMenu
 
 SPEC CHECKSUMS:
-  FWSideMenu: bb55a6e34d5a1aff0527ccdaaa25ae02915dd273
+  FWSideMenu: d76f8186dfd7f751cffb9c4515c514ff6b17d5b3
 
 PODFILE CHECKSUM: 9b72adf5f42a17e026b6cb0fe52e547341a4b78b
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
