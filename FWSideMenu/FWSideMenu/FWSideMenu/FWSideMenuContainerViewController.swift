@@ -152,6 +152,9 @@ open class FWSideMenuContainerViewController: UIViewController, UIGestureRecogni
     /// 打开左（右）菜单时中间视图边上是否需要阴影
     @objc public var sideMenuShadowEnabled: Bool = false
     
+    /// 是否开启中间控制器点击事件
+    @objc public var centerTapGestureEnabled: Bool = true
+    
     /// 中间控制器的灰色遮罩层
     private var centerMaskView: UIView = {
         
@@ -264,24 +267,33 @@ extension FWSideMenuContainerViewController {
 extension FWSideMenuContainerViewController {
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if self.sideMenuPanMode == .defaults {
+        
+        if gestureRecognizer.isMember(of: UITapGestureRecognizer.self) {
+            if self.centerTapGestureEnabled == true {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            if self.sideMenuPanMode == .defaults {
+                return true
+            } else if self.sideMenuPanMode == .none {
+                return false
+            } else if self.sideMenuPanMode == .centerViewController {
+                if gestureRecognizer == self.centerPanGestureRecognizer {
+                    return true
+                } else {
+                    return false
+                }
+            } else if self.sideMenuPanMode == .sideMenu {
+                if gestureRecognizer == self.sideMenuPanGestureRecognizer {
+                    return true
+                } else {
+                    return false
+                }
+            }
             return true
-        } else if self.sideMenuPanMode == .none {
-            return false
-        } else if self.sideMenuPanMode == .centerViewController {
-            if gestureRecognizer == self.centerPanGestureRecognizer {
-                return true
-            } else {
-                return false
-            }
-        } else if self.sideMenuPanMode == .sideMenu {
-            if gestureRecognizer == self.sideMenuPanGestureRecognizer {
-                return true
-            } else {
-                return false
-            }
         }
-        return true
     }
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -742,10 +754,12 @@ extension FWSideMenuContainerViewController {
     
     private func sendStateEventNotification(event: FWSideMenuStateEvent) {
         
-        if event == .didClose {
-            self.centerTapGestureRecognizer?.isEnabled = false
-        } else {
-            self.centerTapGestureRecognizer?.isEnabled = true
+        if self.centerTapGestureEnabled == true {
+            if event == .didClose {
+                self.centerTapGestureRecognizer?.isEnabled = false
+            } else {
+                self.centerTapGestureRecognizer?.isEnabled = true
+            }
         }
         
         let userInfo = ["eventType": NSNumber(value: Int8(event.rawValue))]
