@@ -9,6 +9,7 @@
 ## 支持pod导入：
 
 ```cocoaPods
+use_frameworks!
 pod 'FWSideMenu'
 注意：如出现 Unable to find a specification for 'FWSideMenu' 错误，可执行 pod repo update 命令。
 ```
