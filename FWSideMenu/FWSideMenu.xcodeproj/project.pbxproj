@@ -140,8 +140,8 @@
 				495D8EA9207D8EFA00363A11 /* RecentViewController.swift */,
 				495D8EAA207D8EFA00363A11 /* RecentTableViewCell.swift */,
 				495D8EAB207D8EFA00363A11 /* RecentTableViewCell.xib */,
-				495D8EAC207D8EFA00363A11 /* SeeViewController.swift */,
 				495D8EAD207D8EFA00363A11 /* BuddyViewController.swift */,
+				495D8EAC207D8EFA00363A11 /* SeeViewController.swift */,
 				495D8EAE207D8EFA00363A11 /* QworldViewController.swift */,
 				495D8EB5207D904500363A11 /* SubViewController.swift */,
 			);

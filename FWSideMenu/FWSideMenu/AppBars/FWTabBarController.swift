@@ -9,13 +9,17 @@
 import Foundation
 import UIKit
 
-class FWTabBarController: UITabBarController {
+class FWTabBarController: UITabBarController, UITabBarControllerDelegate {
+    
+    private var currentSelectedIndex: NSInteger = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 背景色设为白色
         self.view.backgroundColor = UIColor.white
+        
+        self.delegate = self
         
         let tabBar = UITabBarItem.appearance()
         let attrsNormal = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 10.0), NSAttributedStringKey.foregroundColor: UIColor.gray]
@@ -24,7 +28,17 @@ class FWTabBarController: UITabBarController {
         tabBar.setTitleTextAttributes(attrsSelected, for: .selected)
         
         setupUI()
+        
+        self.setNeedsStatusBarAppearanceUpdate()
     }
+    
+    //    override var childViewControllerForStatusBarStyle: UIViewController? {
+    //        return self.tabBarController!.viewControllers![self.currentSelectedIndex]
+    //    }
+    //
+    //    override var childViewControllerForStatusBarHidden: UIViewController? {
+    //        return self.tabBarController!.viewControllers![self.currentSelectedIndex]
+    //    }
 }
 
 
@@ -46,6 +60,14 @@ extension FWTabBarController {
             let nav = FWNavigationController(rootViewController: vc)
             addChildViewController(nav)
         }
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        //        if tabBarController.viewControllers != nil {
+        //            self.currentSelectedIndex = tabBarController.viewControllers!.firstIndex(of: viewController) ?? 0
+        //        }
+        //        self.setNeedsStatusBarAppearanceUpdate()
+        return true
     }
 }
 

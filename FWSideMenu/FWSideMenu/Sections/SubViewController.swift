@@ -20,6 +20,9 @@ class SubViewController: UIViewController {
         let emptyImgView = UIImageView(image: UIImage(named: "img_empty_photo"))
         emptyImgView.center = self.view.center
         self.view.addSubview(emptyImgView)
-        
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
     }
 }

@@ -30,7 +30,6 @@ class FWNavigationController: UINavigationController {
         self.extendedLayoutIncludesOpaqueBars = false
         let edgeOptions: UIRectEdge = [.left, .bottom, .right, .top] //注意位移多选枚举的使用
         self.edgesForExtendedLayout = edgeOptions
-        
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -52,12 +51,17 @@ class FWNavigationController: UINavigationController {
             viewController.navigationItem.leftBarButtonItem?.customView?.frame = button.frame
             
             viewController.hidesBottomBarWhenPushed = true
-            
-            // 设置状态栏
-            UIApplication.shared.statusBarStyle = .default
         }
         
         super.pushViewController(viewController, animated: animated)
+    }
+    
+    override var childViewControllerForStatusBarStyle: UIViewController? {
+        return self.topViewController
+    }
+    
+    override var childViewControllerForStatusBarHidden: UIViewController? {
+        return self.topViewController
     }
 }
 
@@ -70,6 +74,4 @@ extension FWNavigationController {
             vcBackActionBlock!()
         }
     }
-    
-    
 }
