@@ -240,10 +240,10 @@ open class FWSideMenuContainerViewController: UIViewController, UIGestureRecogni
 // MARK: - 初始化方法
 extension FWSideMenuContainerViewController {
     
-    /// 类初始化方法
+    /// 类初始化方法1
     ///
     /// - Parameters:
-    ///   - centerViewController: 中间控制器（即当前您的主控制器）
+    ///   - centerViewController: 中间控制器（即当前您的主控制器），此时该控制器视图全局可拖拽，因此可能会出现手势冲突，建议使用 类初始化方法2
     ///   - leftMenuViewController: 左侧菜单控制器，可为nil
     ///   - rightMenuViewController: 右侧菜单控制器，可为nil
     /// - Returns: self
@@ -252,7 +252,7 @@ extension FWSideMenuContainerViewController {
         return self.container(centerViewController: centerViewController, centerLeftPanViewWidth: UIScreen.main.bounds.width / 2, centerRightPanViewWidth: UIScreen.main.bounds.width / 2, leftMenuViewController: leftMenuViewController, rightMenuViewController: rightMenuViewController)
     }
     
-    /// 类初始化方法
+    /// 类初始化方法2
     ///
     /// - Parameters:
     ///   - centerViewController: 中间控制器（即当前您的主控制器）
