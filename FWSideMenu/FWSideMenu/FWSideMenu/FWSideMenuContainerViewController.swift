@@ -134,7 +134,7 @@ open class FWSideMenuContainerViewController: UIViewController, UIGestureRecogni
     
     /// 拖动状态
     @objc public var sideMenuPanMode: FWSideMenuPanMode = .defaults
-    /// 当前菜单状态
+    /// 设置当前菜单状态
     @objc public var sideMenuState: FWSideMenuState = .closed
     
     /// 左菜单宽度
