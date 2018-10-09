@@ -9,6 +9,7 @@
 ## 支持pod导入：
 
 ```cocoaPods
+use_frameworks!
 pod 'FWSideMenu'
 注意：如出现 Unable to find a specification for 'FWSideMenu' 错误，可执行 pod repo update 命令。
 ```
@@ -84,5 +85,5 @@ FWSideMenuContainerViewController.container(centerViewController: FWTabBarContro
 
 ## 结尾语：
 
-- 使用过程中发现bug请issues或（QQ群：670698309）；
+- 使用过程中发现bug请issues或加入FW问题反馈群：670698309（此群只接受FW相关组件问题）；
 - 有新的需求欢迎提出；

@@ -23,7 +23,9 @@
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
     
-    self.sideMenuContainer = [FWSideMenuContainerViewController containerWithCenterViewController: nav leftMenuViewController:[[MenuViewController alloc] init] rightMenuViewController:nil];
+    //    self.sideMenuContainer = [FWSideMenuContainerViewController containerWithCenterViewController: nav leftMenuViewController:[[MenuViewController alloc] init] rightMenuViewController:nil];
+    
+    self.sideMenuContainer = [FWSideMenuContainerViewController containerWithCenterViewController:nav centerLeftPanViewWidth:20 centerRightPanViewWidth:0 leftMenuViewController:[[MenuViewController alloc] init] rightMenuViewController:nil];
     
     self.window.rootViewController = self.sideMenuContainer;
     

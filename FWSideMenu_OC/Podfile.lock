@@ -1,5 +1,5 @@
 PODS:
-  - FWSideMenu (2.0.2)
+  - FWSideMenu (2.0.4)
 
 DEPENDENCIES:
   - FWSideMenu
@@ -9,7 +9,7 @@ SPEC REPOS:
     - FWSideMenu
 
 SPEC CHECKSUMS:
-  FWSideMenu: d76f8186dfd7f751cffb9c4515c514ff6b17d5b3
+  FWSideMenu: dcaa453cdebcbb49ff37b182b0666e8346c4c420
 
 PODFILE CHECKSUM: 9b72adf5f42a17e026b6cb0fe52e547341a4b78b
 
