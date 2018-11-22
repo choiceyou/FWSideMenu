@@ -26,6 +26,7 @@
     //    self.sideMenuContainer = [FWSideMenuContainerViewController containerWithCenterViewController: nav leftMenuViewController:[[MenuViewController alloc] init] rightMenuViewController:nil];
     
     self.sideMenuContainer = [FWSideMenuContainerViewController containerWithCenterViewController:nav centerLeftPanViewWidth:20 centerRightPanViewWidth:0 leftMenuViewController:[[MenuViewController alloc] init] rightMenuViewController:nil];
+    self.sideMenuContainer.leftMenuWidth = UIScreen.mainScreen.bounds.size.width * 0.7;
     
     self.window.rootViewController = self.sideMenuContainer;
     
