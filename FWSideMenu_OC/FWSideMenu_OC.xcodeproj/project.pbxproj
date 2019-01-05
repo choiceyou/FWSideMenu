@@ -303,16 +303,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FWSideMenu_OC/Pods-FWSideMenu_OC-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FWSideMenu_OC/Pods-FWSideMenu_OC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/FWSideMenu/FWSideMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FWSideMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FWSideMenu_OC/Pods-FWSideMenu_OC-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FWSideMenu_OC/Pods-FWSideMenu_OC-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8AC16AF2A9F5274591D9B098 /* [CP] Check Pods Manifest.lock */ = {

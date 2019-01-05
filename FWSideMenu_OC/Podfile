@@ -5,5 +5,7 @@ use_frameworks!
 target 'FWSideMenu_OC' do
     
     pod 'FWSideMenu'
+    # 侧滑关闭页面：https://github.com/forkingdog/FDFullscreenPopGesture
+    pod 'FDFullscreenPopGesture'
     
 end
