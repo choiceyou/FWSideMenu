@@ -1,0 +1,11 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'FWSideMenu' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  
+  # 侧滑关闭页面：https://github.com/forkingdog/FDFullscreenPopGesture
+  pod 'FDFullscreenPopGesture'
+  
+end
