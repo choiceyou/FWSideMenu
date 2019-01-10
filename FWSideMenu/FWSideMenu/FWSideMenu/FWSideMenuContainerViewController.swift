@@ -133,7 +133,17 @@ open class FWSideMenuContainerViewController: UIViewController, UIGestureRecogni
     }
     
     /// 拖动状态
-    @objc public var sideMenuPanMode: FWSideMenuPanMode = .defaults
+    @objc public var sideMenuPanMode: FWSideMenuPanMode = .defaults {
+        willSet {
+            if newValue == .none || newValue == .sideMenu {
+                self.centerLeftPanView.isUserInteractionEnabled = false
+                self.centerRightPanView.isUserInteractionEnabled = false
+            } else {
+                self.centerLeftPanView.isUserInteractionEnabled = true
+                self.centerRightPanView.isUserInteractionEnabled = true
+            }
+        }
+    }
     /// 设置当前菜单状态
     @objc public var sideMenuState: FWSideMenuState = .closed
     
@@ -470,6 +480,10 @@ extension FWSideMenuContainerViewController {
             translatedPoint.x = min(translatedPoint.x, 0)
         }
         
+        if translatedPoint.x == 0.0 {
+            self.setSideMenuState(state: .closed, completeBlock: nil)
+        }
+        
         if pan.state == .ended {
             let velocity = pan.velocity(in: view)
             let finalX = translatedPoint.x + (0.35 * velocity.x)
@@ -495,7 +509,7 @@ extension FWSideMenuContainerViewController {
                 }
             }
         } else {
-            self.setCenterViewControllerOffset(offset: translatedPoint.x)
+            self.setCenterViewControllerOffset(offset: translatedPoint.x, time: 0)
         }
     }
     
@@ -516,6 +530,10 @@ extension FWSideMenuContainerViewController {
             translatedPoint.x = min(translatedPoint.x, 0)
         } else {
             translatedPoint.x = max(translatedPoint.x, 0)
+        }
+        
+        if translatedPoint.x == 0.0 {
+            self.setSideMenuState(state: .closed, completeBlock: nil)
         }
         
         if pan.state == .ended {
@@ -544,7 +562,7 @@ extension FWSideMenuContainerViewController {
             }
             self.panGestureDirection = .none
         } else {
-            self.setCenterViewControllerOffset(offset: translatedPoint.x)
+            self.setCenterViewControllerOffset(offset: translatedPoint.x, time: 0)
         }
     }
 }
@@ -737,7 +755,7 @@ extension FWSideMenuContainerViewController {
 // MARK: - 移动centerViewController
 extension FWSideMenuContainerViewController {
     
-    private func setCenterViewControllerOffset(offset: CGFloat) {
+    private func setCenterViewControllerOffset(offset: CGFloat, time: TimeInterval) {
         
         self.centerViewController?.view.frame.origin.x = offset
         
@@ -750,13 +768,15 @@ extension FWSideMenuContainerViewController {
         }
         percent = percent * 0.4
         
-        if foffset > 5 && self.centerMaskView.superview == nil {
+        if foffset > 0 && self.centerMaskView.superview == nil {
             self.centerViewController?.view.addSubview(self.centerMaskView)
             self.centerViewController?.view.bringSubview(toFront: self.centerMaskView)
-        } else if foffset <= 5 && self.centerMaskView.superview != nil {
-            self.centerMaskView.removeFromSuperview()
+        } else if foffset <= 0 && self.centerMaskView.superview != nil {
+            DispatchQueue.main.asyncAfter(deadline: .now()+time) {
+                self.centerMaskView.removeFromSuperview()
+            }
         }
-        if centerMaskViewEnabled == true {
+        if centerMaskViewEnabled == true && foffset > 0 {
             self.centerMaskView.backgroundColor = UIColor.black.withAlphaComponent(CGFloat(percent))
         }
         
@@ -787,10 +807,20 @@ extension FWSideMenuContainerViewController {
             let duration = self.animationDurationFromStartPosition(startPosition: centerViewControllerXPosition, endPosition: offset)
             
             UIView.animate(withDuration: TimeInterval(duration), animations: {
-                self.setCenterViewControllerOffset(offset: offset)
+                self.setCenterViewControllerOffset(offset: offset, time: TimeInterval(duration))
                 if additionalAnimationsBlock != nil {
                     additionalAnimationsBlock!()
                 }
+                
+                let foffset = fabsf(Float(offset))
+                var percent = 0.0
+                if offset > 0 {
+                    percent = Double(foffset / Float(self.leftMenuWidth))
+                } else {
+                    percent = Double(foffset / Float(self.rightMenuWidth))
+                }
+                percent = percent * 0.4
+                self.centerMaskView.backgroundColor = UIColor.black.withAlphaComponent(CGFloat(percent))
             }, completion: { (finished) in
                 self.panGestureVelocity = 0.0
                 if completeBlock != nil {
@@ -798,7 +828,7 @@ extension FWSideMenuContainerViewController {
                 }
             })
         } else {
-            self.setCenterViewControllerOffset(offset: offset)
+            self.setCenterViewControllerOffset(offset: offset, time: 0)
             if additionalAnimationsBlock != nil {
                 additionalAnimationsBlock!()
             }

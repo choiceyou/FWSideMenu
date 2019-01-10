@@ -43,6 +43,9 @@ class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // 设置导航栏
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: navTitleFont)]
         self.navigationController?.navigationBar.setBackgroundImage(AppDelegate.getImageWithColor(color: UIColor.white), for: .default)
+        
+        // 本页面开启支持关闭侧滑菜单
+        self.menuContainerViewController.sideMenuPanMode = .none
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -17,9 +17,6 @@ class QworldViewController: UIViewController {
         // 设置导航栏
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.systemFont(ofSize: navTitleFont)]
         self.navigationController?.navigationBar.setBackgroundImage(AppDelegate.resizableImage(imageName: "header_bg_message", edgeInsets: UIEdgeInsetsMake(0, 0, 0, 0)), for: .default)
-        
-        // 本页面时关闭支持打开侧滑菜单
-        self.menuContainerViewController.sideMenuPanMode = .none
     }
     
     override func viewWillDisappear(_ animated: Bool) {

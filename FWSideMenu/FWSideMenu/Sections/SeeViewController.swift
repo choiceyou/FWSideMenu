@@ -17,9 +17,6 @@ class SeeViewController: UIViewController {
         // 设置导航栏
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: navTitleFont)]
         self.navigationController?.navigationBar.setBackgroundImage(AppDelegate.getImageWithColor(color: UIColor.white), for: .default)
-        
-        // 本页面开启支持打开侧滑菜单
-        self.menuContainerViewController.sideMenuPanMode = .defaults
     }
     
     override func viewWillDisappear(_ animated: Bool) {
