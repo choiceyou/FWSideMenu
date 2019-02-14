@@ -630,12 +630,10 @@ extension FWSideMenuContainerViewController {
 extension FWSideMenuContainerViewController {
     
     private func leftMenuWillShow() {
-        self.leftMenuViewController?.view.isHidden = false
         self.menuContainerView.bringSubview(toFront: self.leftMenuViewController!.view)
     }
     
     private func rightMenuWillShow() {
-        self.rightMenuViewController?.view.isHidden = false
         self.menuContainerView.bringSubview(toFront: self.rightMenuViewController!.view)
     }
     
@@ -666,8 +664,6 @@ extension FWSideMenuContainerViewController {
         case .closed:
             self.sendStateEventNotification(event: .willClose)
             self.closeSideMenu(completeBolck: {
-                self.leftMenuViewController?.view.isHidden = true
-                self.rightMenuViewController?.view.isHidden = true
                 innerCompleteBlock()
             })
             break
