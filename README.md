@@ -90,6 +90,9 @@ FWSideMenuContainerViewController.container(centerViewController: FWTabBarContro
 - [x] 修复侧滑打开的状态下，拖动侧滑至关闭的的状态，发生死屏现象；
 - [x] 优化点击关闭侧滑菜单过程中灰色层动画变化过程（动画更加自然，不会出现一闪的现象）；
 
+• v2.0.6：
+- [x] 修复左右拖动菜单栏时可能会出现隐藏菜单的问题；
+
 
 
 ## 结尾语：
