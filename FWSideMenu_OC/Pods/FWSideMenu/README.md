@@ -83,6 +83,15 @@ FWSideMenuContainerViewController.container(centerViewController: FWTabBarContro
 
 
 
+## 更新记录：
+
+• v2.0.5：
+- [x] 修复侧滑关闭过程中，在距离屏幕边缘小于等于5pt的位置松手时发生死屏现象；
+- [x] 修复侧滑打开的状态下，拖动侧滑至关闭的的状态，发生死屏现象；
+- [x] 优化点击关闭侧滑菜单过程中灰色层动画变化过程（动画更加自然，不会出现一闪的现象）；
+
+
+
 ## 结尾语：
 
 - 使用过程中发现bug请issues或加入FW问题反馈群：670698309（此群只接受FW相关组件问题）；

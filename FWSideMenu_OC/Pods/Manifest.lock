@@ -1,20 +1,20 @@
 PODS:
   - FDFullscreenPopGesture (1.1)
-  - FWSideMenu (2.0.4)
+  - FWSideMenu (2.0.6)
 
 DEPENDENCIES:
   - FDFullscreenPopGesture
   - FWSideMenu
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - FDFullscreenPopGesture
     - FWSideMenu
 
 SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  FWSideMenu: dcaa453cdebcbb49ff37b182b0666e8346c4c420
+  FWSideMenu: e081350bc75e294a84cd72ab2dda7d091bd68780
 
 PODFILE CHECKSUM: f821316a63c3c4c2b9c7d3164125dd86a03ea326
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.8.4
