@@ -100,6 +100,10 @@ FWSideMenuContainerViewController.container(centerViewController: FWTabBarContro
 • v2.0.6：
 - [x] 修复左右拖动菜单栏时可能会出现隐藏菜单的问题；
 
+• v2.1.0：
+- [x] 升级到Swift5；
+- [x] 解决子控制器状态栏设置无效问题；
+
 
 
 ## 结尾语：
