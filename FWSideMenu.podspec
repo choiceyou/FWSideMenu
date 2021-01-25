@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   为了让读者有更好的视觉体验，高仿了QQ7.5版本的侧滑效果，主要是为了表达出这个侧滑效果
                    DESC
 
-  s.homepage     = "http://EXAMPLE/FWSideMenu"
+  s.homepage     = "https://github.com/choiceyou/FWSideMenu"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
