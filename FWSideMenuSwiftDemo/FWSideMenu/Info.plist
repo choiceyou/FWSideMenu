@@ -41,5 +41,13 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>请点击“允许”以允许访问</string>
+	<key>NSCameraUsageDescription</key>
+	<string>请点击“允许”以允许访问</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>请点击“允许”以允许访问</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>请点击“允许”以允许访问</string>
 </dict>
 </plist>

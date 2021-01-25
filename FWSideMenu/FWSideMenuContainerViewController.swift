@@ -108,6 +108,7 @@ open class FWSideMenuContainerViewController: UIViewController, UIGestureRecogni
             if newValue != nil {
                 self.addChild(newValue!)
                 newValue?.didMove(toParent: self)
+                newValue?.view.isHidden = true
                 
                 if self.isViewHasLoad {
                     self.setLeftSideMenuFrameToClosedPosition()
@@ -124,6 +125,7 @@ open class FWSideMenuContainerViewController: UIViewController, UIGestureRecogni
             if newValue != nil {
                 self.addChild(newValue!)
                 newValue?.didMove(toParent: self)
+                newValue?.view.isHidden = true
                 
                 if self.isViewHasLoad {
                     self.setRightSideMenuFrameToClosedPosition()
@@ -672,6 +674,8 @@ extension FWSideMenuContainerViewController {
         case .closed:
             self.sendStateEventNotification(event: .willClose)
             self.closeSideMenu(completeBolck: {
+                self.leftMenuViewController?.view.isHidden = true
+                self.rightMenuViewController?.view.isHidden = true
                 innerCompleteBlock()
             })
             break
@@ -680,6 +684,7 @@ extension FWSideMenuContainerViewController {
                 return
             }
             
+            self.leftMenuViewController?.view.isHidden = false
             self.sendStateEventNotification(event: .willOpen)
             self.leftMenuWillShow()
             self.openLeftSideMenu(completeBolck: innerCompleteBlock)
@@ -689,6 +694,7 @@ extension FWSideMenuContainerViewController {
                 return
             }
             
+            self.rightMenuViewController?.view.isHidden = false
             self.sendStateEventNotification(event: .willOpen)
             self.rightMenuWillShow()
             self.openRightSideMenu(completeBolck: innerCompleteBlock)
@@ -761,6 +767,8 @@ extension FWSideMenuContainerViewController {
     
     private func setCenterViewControllerOffset(offset: CGFloat, time: TimeInterval) {
         
+        self.leftMenuViewController?.view.isHidden = false
+        self.rightMenuViewController?.view.isHidden = false
         self.centerViewController?.view.frame.origin.x = offset
         
         let foffset = fabsf(Float(offset))
@@ -830,6 +838,13 @@ extension FWSideMenuContainerViewController {
                 if completeBlock != nil {
                     completeBlock!()
                 }
+                if self.centerViewController?.view.frame.minX == 0 {
+                    self.leftMenuViewController?.view.isHidden = true
+                    self.rightMenuViewController?.view.isHidden = true
+                } else {
+                    self.leftMenuViewController?.view.isHidden = false
+                    self.rightMenuViewController?.view.isHidden = false
+                }
             })
         } else {
             self.setCenterViewControllerOffset(offset: offset, time: 0)
@@ -839,6 +854,14 @@ extension FWSideMenuContainerViewController {
             self.panGestureVelocity = 0.0
             if completeBlock != nil {
                 completeBlock!()
+            }
+            
+            if self.centerViewController?.view.frame.minX == 0 {
+                self.leftMenuViewController?.view.isHidden = true
+                self.rightMenuViewController?.view.isHidden = true
+            } else {
+                self.leftMenuViewController?.view.isHidden = false
+                self.rightMenuViewController?.view.isHidden = false
             }
         }
     }
