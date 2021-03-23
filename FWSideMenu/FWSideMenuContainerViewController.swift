@@ -832,7 +832,13 @@ extension FWSideMenuContainerViewController {
                     percent = Double(foffset / Float(self.rightMenuWidth))
                 }
                 percent = percent * 0.4
-                self.centerMaskView.backgroundColor = UIColor.black.withAlphaComponent(CGFloat(percent))
+                
+                if self.centerMaskViewEnabled == true && foffset > 0 {
+                    self.centerMaskView.backgroundColor = UIColor.black.withAlphaComponent(CGFloat(percent))
+                } else {
+                    self.centerMaskView.backgroundColor = .clear
+                }
+                
             }, completion: { (finished) in
                 self.panGestureVelocity = 0.0
                 if completeBlock != nil {
